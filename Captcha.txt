@@ -1,3 +1,4 @@
+<!--comment-->
 <apex:page controller="Captcha" cache="false">
 <apex:pageBlock title="Captcha Verification">
 <apex:form >
@@ -10,9 +11,9 @@
 <apex:outputLabel for="inputEmail" value="Email"/>
 <apex:inputText value="{!myEmail}" id="inputEmail"/>
 </apex:pageBlockSectionItem>
-<!– Show the reCAPTCHA form if they are not yet verified –>
+<!â€“ Show the reCAPTCHA form if they are not yet verified â€“>
 <apex:pageBlockSectionItem rendered="{! NOT(verified)}">
-<!– reCAPTCHA verification Source: https://developers.google.com/recaptcha/docs/display –>
+<!â€“ reCAPTCHA verification Source: https://developers.google.com/recaptcha/docs/display â€“>
 <script type="text/javascript" src="https://www.google.com/recaptcha/api/challenge?k={!publicKey}">
 </script>
 <noscript>
@@ -21,14 +22,14 @@
         <textarea name="recaptcha_challenge_field" rows="3" cols="40"/>
 <input type="hidden" name="recaptcha_response_field" value="manual_challenge"/>
 </noscript>
-<!– end reCAPTCHA verification –>
+<!â€“ end reCAPTCHA verification â€“>
 </apex:pageBlockSectionItem>
 <apex:pageBlockSectionItem >
-<apex:commandButton action="{!verify}" value="Check If I’m Human" rendered="{! NOT(verified)}"/>
+<apex:commandButton action="{!verify}" value="Check If Iâ€™m Human" rendered="{! NOT(verified)}"/>
 </apex:pageBlockSectionItem>
-<!– Otherwise, they are verified, show a confirmation message –>
+<!â€“ Otherwise, they are verified, show a confirmation message â€“>
 <apex:pageBlockSectionItem rendered="{!verified}">
-<p>reCAPTCHA verification suggests that you’re not a bot.</p>
+<p>reCAPTCHA verification suggests that youâ€™re not a bot.</p>
 </apex:pageBlockSectionItem
 </apex:pageBlockSection>
 </apex:form>
